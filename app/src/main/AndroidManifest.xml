@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SECURITY: No android.permission.INTERNET is declared here or anywhere.
+    The app is offline-only by design (PROJECT_SPEC rule 1).
+    allowBackup=false and fullBackupContent=false per rule 6.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Needed to read existing SMS from the inbox on first run / re-import -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- Needed so the BroadcastReceiver gets new SMS as they arrive -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <!-- Declare telephony optional so the app works on devices without telephony hardware -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <!-- Needed to trigger the biometric/PIN lock prompt -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name=".MoneyTrackerApp"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MoneyTracker"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            SmsReceiver: exported so the system can deliver SMS_RECEIVED broadcasts,
+            but guarded by the BROADCAST_SMS system permission so only the system
+            (not other apps) can send it.
+        -->
+        <receiver
+            android:name=".data.sms.SmsReceiver"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

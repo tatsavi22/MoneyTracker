@@ -1,0 +1,4 @@
+<resources>
+    <!-- Night override — Compose handles dark mode, so the XML theme stays the same -->
+    <style name="Theme.MoneyTracker" parent="android:Theme.Material.NoActionBar" />
+</resources>

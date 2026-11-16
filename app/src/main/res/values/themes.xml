@@ -1,0 +1,9 @@
+<resources>
+    <!--
+        Base application theme for MoneyTracker.
+        The actual Material3 theme is configured in Compose (ui/theme/Theme.kt).
+        This style just prevents the system from applying its own conflicting theme
+        before Compose renders.
+    -->
+    <style name="Theme.MoneyTracker" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

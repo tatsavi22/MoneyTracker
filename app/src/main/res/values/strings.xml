@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MoneyTracker</string>
+    <!-- Home screen strings -->
+    <string name="tab_today">Today</string>
+    <string name="tab_this_month">This month</string>
+    <string name="empty_today">No transactions today. Payments you make or receive will appear here.</string>
+    <string name="empty_month">No transactions this month.</string>
+    <string name="label_payment_sent">Payment sent</string>
+    <string name="label_money_received">Money received</string>
+    <!-- Permission screen strings -->
+    <string name="permission_rationale">MoneyTracker reads your bank SMS messages to show your spending. SMS text is never stored or sent anywhere — only the parsed amount and date are saved on your phone.</string>
+    <string name="grant_permission">Grant SMS permission</string>
+    <string name="open_settings">Open app settings</string>
+    <string name="permission_denied_hint">SMS permission is not granted. The app needs it to read your bank messages.\n\nNote: If installed from an APK (not the Play Store), you may need to go to App info → ⋮ → Allow restricted settings first.</string>
+    <!-- Settings screen strings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_import_again">Import inbox again</string>
+    <string name="settings_import_desc">Re-read bank SMS from the last 90 days</string>
+    <string name="settings_lock">App lock</string>
+    <string name="settings_lock_desc">Require biometric or PIN to open the app</string>
+    <string name="settings_delete_all">Delete all my data</string>
+    <string name="settings_delete_confirm_title">Delete all data?</string>
+    <string name="settings_delete_confirm_body">This permanently removes all transactions. The app will return to its empty state.</string>
+    <string name="settings_delete_confirm_ok">Delete</string>
+    <string name="settings_delete_confirm_cancel">Cancel</string>
+    <string name="settings_sms_status">SMS permission</string>
+    <string name="settings_sms_granted">Granted ✓</string>
+    <string name="settings_sms_denied">Not granted</string>
+</resources>

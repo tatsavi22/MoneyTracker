@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Explicitly exclude all app data from cloud backup (allowBackup=false
+    is set on the <application> tag, but this file provides belt-and-suspenders
+    coverage on Android 12+ via dataExtractionRules).
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude everything — the database holds sensitive financial data -->
+        <exclude domain="root" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="file" />
+        <exclude domain="external" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="file" />
+        <exclude domain="external" />
+    </device-transfer>
+</data-extraction-rules>
